@@ -69,14 +69,17 @@ function generateDescription(description, element){
 function taskStatus(element){
     element.addEventListener('click', () => {
         const el = element.children;
+        const removeBtn = element.children[2];
         for (let i = 0; i<2; i++) {
             const text = el[i];
             if (text.style.textDecoration === 'none'){
                 text.style.textDecoration = 'line-through';
-                element.style.backgroundColor = '#DCF0D9';                
+                element.style.backgroundColor = '#DCF0D9';
+                removeBtn.style.display = 'inline';                
             } else {
                 text.style.textDecoration = 'none';
                 element.style.backgroundColor = 'aliceblue';
+                removeBtn.style.display = 'none';                
             }
         }
     });
@@ -86,6 +89,7 @@ function createRemoveBtn(element){
     const button = document.createElement('button');
     button.setAttribute('class', 'btn btn--remove');
     button.textContent = 'REMOVE';
+    button.style.display = 'none';
     button.onclick =  function(){
         deleteTask(element);
         element.remove();
