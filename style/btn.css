@@ -1,0 +1,18 @@
+.btn {
+    padding: 5px;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+}
+
+.btn--remove {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 5px;
+}
+
+.btn--remove:active, .btn--remove:hover {
+    color: red;
+}

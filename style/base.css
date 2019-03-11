@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700|Lato:300');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #FCE6EC;
+}
+
+header {
+    width: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.title{
+    font-family: 'Bungee Shade', cursive;
+    text-shadow: 2px 2px white;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.form {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+    width: 50vw;
+    min-width: 300px;
+    background-color: aliceblue;
+    border: solid 2px black;
+    border-radius: 3px;
+    box-shadow: 5px 5px black;
+    padding-bottom: 20px;
+    margin: 0 20px;
+    align-self: center;
+}
+
+.form h2 {
+    font-size: 2em;
+    text-shadow: 1px 1px grey;
+}
+
+input {
+    font-family: 'Lato', sans-serif;
+    height: 2em;
+    font-size: 1em;
+    margin-bottom: 5px;
+    border: solid 1px black; 
+}
+ 
+p {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: 1em;
+}
