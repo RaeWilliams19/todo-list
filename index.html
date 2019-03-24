@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,24 @@
   <link rel="stylesheet" type="text/css" href="style/todo.css">
   <script src="js/todo.js"></script>
 </head>
+
 <body>
   <header>
     <div class="title">
       <h1>TO-DO LIST</h1>
     </div>
-    <div class ="form">
+    <form>
       <h2>NEW TASK</h2>
       <input type="text" id="title" placeholder="Task to complete"><br>
       <input type="text" id="description" placeholder="Description"><br><br>
-      <button class="btn btn--add">ADD</button>
+      <button type="submit" class="btn btn--add">ADD</button>
+    </form>
+    <div class="sorting-options">
+      <button class="btn btn--sortAZ">SORT A-Z</button>
+      <button class="btn btn--sortZA">SORT Z-A</button>
     </div>
   </header>
   <section class="card-container"></section>
 </body>
+
 </html>

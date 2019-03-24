@@ -1,0 +1,24 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "Rae's To Do App",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./js/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaeWilliams19/todo-list.git"
+  },
+  "author": "Rae Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaeWilliams19/todo-list/issues"
+  },
+  "homepage": "https://github.com/RaeWilliams19/todo-list#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
