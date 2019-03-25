@@ -20,25 +20,20 @@ function deleteTask(element) {
   const title = element.childNodes[0].textContent;
   const description = element.childNodes[1].textContent;
 
-  for (let i = 0; i < taskArray.length; i += 1) {
-    const task = taskArray[i];
-    if (task.title === title && task.description === description) {
-      const taskIndex = taskArray.indexOf(task);
+  taskArray.forEach((item) => {
+    if (item.title === title && item.description === description) {
+      const taskIndex = taskArray.indexOf(item);
       taskArray.splice(taskIndex, 1);
       localStorage.setItem('tasks', JSON.stringify(taskArray));
     }
-  }
+  });
 }
 
 function createRemoveBtn(element, status) {
   const button = document.createElement('button');
   button.textContent = 'REMOVE';
 
-  if (status) {
-    button.setAttribute('class', 'btn btn--remove');
-  } else {
-    button.setAttribute('class', 'btn btn--remove hidden');
-  }
+  button.setAttribute('class', `card ${status ? 'btn btn--remove' : 'btn btn--remove hidden'}`);
 
   button.onclick = () => {
     deleteTask(element);
@@ -84,11 +79,7 @@ function createCard(title, description, status) {
   const div = document.createElement('div');
   const cardContainer = document.getElementsByClassName('card-container')[0];
 
-  if (status) {
-    div.setAttribute('class', 'card done');
-  } else {
-    div.setAttribute('class', 'card');
-  }
+  div.setAttribute('class', `card ${status ? 'done' : ''}`);
 
   cardContainer.appendChild(div);
   generateTitle(title, div);
@@ -103,18 +94,14 @@ function addNewToDo() {
   addTaskBtn.addEventListener('click', () => {
     const cardTitle = document.getElementById('title').value.toUpperCase();
     const cardDescription = document.getElementById('description').value.toUpperCase();
-
-    if (cardTitle === '' || cardDescription === '') {
-      alert('Oops! Please enter a title and description of your task');
-    } else {
-      const card = {
-        title: cardTitle,
-        description: cardDescription,
-        isDone: false,
-      };
-      taskArray.push(card);
-      createCard(cardTitle, cardDescription, card.isDone);
-    }
+    const card = {
+      title: cardTitle,
+      description: cardDescription,
+      isDone: false,
+    };
+    
+    taskArray.push(card);
+    createCard(cardTitle, cardDescription, card.isDone);
 
     localStorage.setItem('tasks', JSON.stringify(taskArray));
     document.getElementById('title').value = '';
