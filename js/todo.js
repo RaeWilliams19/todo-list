@@ -33,7 +33,7 @@ function createRemoveBtn(element, status) {
   const button = document.createElement('button');
   button.textContent = 'REMOVE';
 
-  button.setAttribute('class', `card ${status ? 'btn btn--remove' : 'btn btn--remove hidden'}`);
+  button.setAttribute('class', `${status ? 'btn btn--remove' : 'btn btn--remove hidden'}`);
 
   button.onclick = () => {
     deleteTask(element);
@@ -99,7 +99,7 @@ function addNewToDo() {
       description: cardDescription,
       isDone: false,
     };
-    
+
     taskArray.push(card);
     createCard(cardTitle, cardDescription, card.isDone);
 
