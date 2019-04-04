@@ -1,6 +1,6 @@
 const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 
-function createElementWithText(textContent, parentElement, tagToCreate, className) {
+function createTagWithText(textContent, parentElement, tagToCreate, className) {
   const childElement = document.createElement(tagToCreate);
   const text = document.createTextNode(textContent);
   childElement.setAttribute('class', className);
@@ -74,8 +74,8 @@ function createCard(title, description, status) {
   div.setAttribute('class', `card ${status ? 'done' : ''}`);
 
   cardContainer.appendChild(div);
-  createElementWithText(title, div, 'h1', 'card-title');
-  createElementWithText(description, div, 'h5', 'card-description');
+  createTagWithText(title, div, 'h1', 'card-title');
+  createTagWithText(description, div, 'h5', 'card-description');
   createRemoveBtn(div, status);
   generateTimeStamp(div);
   toggleTaskStatus(div);
