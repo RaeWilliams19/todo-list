@@ -1,19 +1,11 @@
 const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 
-function generateTitle(title, element) {
-  const h1 = document.createElement('h1');
-  const text = document.createTextNode(title);
-  h1.setAttribute('class', 'card-title');
-  h1.appendChild(text);
-  element.appendChild(h1);
-}
-
-function generateDescription(description, element) {
-  const h5 = document.createElement('h5');
-  const text = document.createTextNode(description);
-  h5.setAttribute('class', 'card-description');
-  h5.appendChild(text);
-  element.appendChild(h5);
+function createElementWithText(textContent, parentElement, tagToCreate, className) {
+  const childElement = document.createElement(tagToCreate);
+  const text = document.createTextNode(textContent);
+  childElement.setAttribute('class', className);
+  childElement.appendChild(text);
+  parentElement.appendChild(childElement);
 }
 
 function deleteTask(element) {
@@ -82,8 +74,8 @@ function createCard(title, description, status) {
   div.setAttribute('class', `card ${status ? 'done' : ''}`);
 
   cardContainer.appendChild(div);
-  generateTitle(title, div);
-  generateDescription(description, div);
+  createElementWithText(title, div, 'h1', 'card-title');
+  createElementWithText(description, div, 'h5', 'card-description');
   createRemoveBtn(div, status);
   generateTimeStamp(div);
   toggleTaskStatus(div);
